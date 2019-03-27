@@ -91,7 +91,7 @@ d3.csv("assets/data/data.csv")
         .attr("class", "d3-tip")
         .offset([80, -60])
         .html(function(d) {
-          return (`Poverty Rate: ${d.poverty}<br>Healthcare Quality${d.healthcare}`);
+          return (`Poverty Rate: ${d.poverty}<br>Percent with healthcare coverage: ${d.healthcare}`);
         });
   
       // Step 7: Create tooltip in the chart
@@ -112,13 +112,13 @@ d3.csv("assets/data/data.csv")
       chartGroup.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0 - margin.left + 40)
-        .attr("x", 0 - (height / 2))
+        .attr("x", 0 - (height / 1.5))
         .attr("dy", "1em")
         .attr("class", "axisText")
-        .text("Healthcare Quality");
+        .text("% Who Lack Healthcare");
   
       chartGroup.append("text")
-        .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+        .attr("transform", `translate(${width / 2}, ${height + margin.top + 10})`)
         .attr("class", "axisText")
         .text("Poverty Rate");;
         
